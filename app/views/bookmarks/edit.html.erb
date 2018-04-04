@@ -33,7 +33,7 @@
           Created by
         </label>
 
-        <input type="text" id="created_by" name="created_by" placeholder="Created by" class="form-control" value="<%= @bookmark.created_by %>">
+        <%= select_tag(:created_by, options_from_collection_for_select(User.all, :id, :username, @bookmark.created_by), :class => "form-control") %>
       </div>
 
       <!-- Label and input for dish_id -->
